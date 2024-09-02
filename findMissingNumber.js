@@ -1,9 +1,12 @@
-function findMissingNumber(arr) {
-    const n = arr.length + 1;
-    const sum = (n * (n + 1)) / 2;
-    const arrSum = arr.reduce((acc, num) => acc + num, 0);
-    return sum - arrSum;
-}
+const arr = [1, 2, 3, 6, 8, 9, 10];
 
-// Example usage:
-console.log(findMissingNumber([1, 2, 3, 5])); // 4
+const findMissingNumbers = (arr) => {
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  const fullRange = Array.from({ length: max - min + 1 }, (_, i) => min + i);
+  const missingNumbers = fullRange.filter(num => !arr.includes(num));
+  return missingNumbers;
+};
+
+const output = findMissingNumbers(arr);
+console.log(output); // [4, 5, 7]

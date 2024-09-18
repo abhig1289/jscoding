@@ -30,3 +30,9 @@ const reverse = arr.reduceRight((acc,elem)=>{
 acc.push(elem);
 return acc;
 },[])
+
+
+//removing falsy values
+
+
+arr.filter(elem =>  elem !== null && elem !== false&& elem !== undefined&& elem !== "" )

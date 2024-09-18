@@ -1,0 +1,21 @@
+//order of execution
+
+console.log("1")
+setTimeout(()=>console.log("2"))
+Promise.resolve(1).then(()=>console.log("3"))
+console.log("4")
+
+
+  1
+  4
+  3 // Promises -Microtask queue
+  2 // setTimeout -Macrotask queue
+
+
+  //eval
+  console.log(eval("a"))
+
+
+  // maxNum
+
+  const findMaxNum = (arr) => arr.reduce((prev,current)=>prev>curr ?prev :current)

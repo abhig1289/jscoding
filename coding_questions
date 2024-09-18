@@ -19,3 +19,14 @@ console.log("4")
   // maxNum
 
   const findMaxNum = (arr) => arr.reduce((prev,current)=>prev>curr ?prev :current)
+//unique 
+
+const unique = arr.filter((item,index,array)=>array.indexOf(item)===index)
+
+
+//reversing an array
+
+const reverse = arr.reduceRight((acc,elem)=>{
+acc.push(elem);
+return acc;
+},[])
